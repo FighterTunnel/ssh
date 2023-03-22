@@ -19,7 +19,7 @@ function addssh() {
     echo -e ""
     echo -e "Username: $Login"
     echo -e "Password: $Pass"
-    echo -e "Validity: $masaaktif"
+    echo -e "Validity: $masaaktif Day"
     echo -e ""
     echo -e "==== Server Information ==="
     echo -e ""
