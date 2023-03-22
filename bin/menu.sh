@@ -42,6 +42,7 @@ function addssh() {
 
 }
 function delssh() {
+    clear
     read -p "Username SSH to Delete : " Pengguna
 
     if getent passwd $Pengguna >/dev/null 2>&1; then
@@ -52,6 +53,7 @@ function delssh() {
     fi
 }
 function member() {
+    clear
     echo "---------------------------------------------------"
     echo "USERNAME          EXP DATE          STATUS"
     echo "---------------------------------------------------"
@@ -74,6 +76,7 @@ function member() {
     echo "---------------------------------------------------"
 }
 function check() {
+    clear
     if [ -e "/var/log/auth.log" ]; then
         LOG="/var/log/auth.log"
     fi
@@ -112,6 +115,7 @@ function check() {
     done
 }
 function delxp() {
+    clear
     echo "Thank you for removing the EXPIRED USERS"
     echo "--------------------------------------"
     cat /etc/shadow | cut -d: -f1,8 | sed /:$/d >/tmp/expirelist.txt
@@ -145,6 +149,7 @@ function delxp() {
     echo "Script are successfully run"
 }
 dnstt() {
+    clear
     read -rp "Input ur NS Domain : " -e NS_DOMAIN
     echo $NS_DOMAIN >/etc/dns
     sed -i "s/$NS/$NS_DOMAIN/g" /etc/systemd/system/client.service
@@ -155,6 +160,7 @@ dnstt() {
     echo "Change NS DOMAIN (SLOWDNS) Successfully"
 }
 function domain() {
+    clear
     read -rp "Input ur Domain/Host : " -e domain
     systemctl stop haproxy
     systemctl stop nginx
