@@ -152,7 +152,7 @@ function delxp() {
 dnstt() {
     clear
     read -rp "Input ur NS Domain : " -e NS_DOMAIN
-    echo $NS_DOMAIN >/etc/dns
+    echo $NS_DOMAIN >/etc/xray/dns
     sed -i "s/$NS/$NS_DOMAIN/g" /etc/systemd/system/client.service
     sed -i "s/$NS/$NS_DOMAIN/g" /etc/systemd/system/server.service
     systemctl daemon-reload
@@ -170,7 +170,7 @@ function domain() {
     /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
     /root/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
     rm -rf /etc/xray/domain
-    echo $domain >/etc/domain
+    echo $domain >/etc/xray/domain
     cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/ftvpn.pem
     systemctl daemon-reload
     systemctl restart nginx
