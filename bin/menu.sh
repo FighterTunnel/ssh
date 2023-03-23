@@ -32,14 +32,15 @@ function addssh() {
     echo -e ""
     echo -e "==== 𝐖𝐞𝐛𝐬𝐨𝐜𝐤𝐞𝐭 𝐒𝐒𝐇 ===="
     echo -e ""
+    echo -e "Websocket HOST : $host"
     echo -e "Websocket SSH Port: 80"
     echo -e "Websocket SSL Port: 443"
-    echo -e "Websocket HOST : $host"
     echo -e ""
     echo -e "==== 𝐃𝐍𝐒𝐓𝐓 𝐒𝐒𝐇 ===="
     echo -e "Pub Key : $PUB"
     echo -e "Host Dns : $NS"
-
+    echo -e ""
+#    echo -e "join grup t.me/fightertunnell"
 }
 function delssh() {
     clear
